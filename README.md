@@ -1,8 +1,7 @@
-
-<div class="container">
-    <h1 style="text-align: center">📚 Book API</h1>
-    <div class="img-container">
-        <img src="assets/images/terminal.png" alt="API Livros">
+<div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h1>📚 Book API</h1>
+    <div class="img-container" style="display: flex; justify-content: center;">
+        <img src="assets/images/terminal.png" alt="API Livros" style="width: 30%;">
     </div>
     <h2>📖 Description</h2>
     <p>API to manage and organize book data, including adding, updating, retrieving, and deleting books.</p>
@@ -50,4 +49,3 @@ DB_PASSWORD=yourpassword</code></pre>
         <li>MySQL</li>
     </ul>
 </div>
-
