@@ -1,5 +1,5 @@
 <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <h1>📚 Book API</h1>
+    <h1>📚 Library API</h1>
     <div class="img-container" style="display: flex; justify-content: center;">
         <img src="assets/images/terminal.png" alt="API Livros" style="width: 30%;">
     </div>
