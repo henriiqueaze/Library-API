@@ -40,6 +40,8 @@ DB_PASSWORD=yourpassword</code></pre>
         <li><strong>PUT /book</strong> - Update a book by ID.</li>
         <li><strong>DELETE /book/{id}</strong> - Delete a book by ID.</li>
     </ul>
+    <h2>💡 HATEOAS</h2>
+    <p>This API implements HATEOAS (Hypermedia as the Engine of Application State) principles to enhance its RESTful design. Each response includes hypermedia links that help clients navigate available actions such as self, update, and delete operations. This makes the API more intuitive and self-descriptive, allowing clients to discover functionality dynamically without relying solely on external documentation.</p>
     <h2>🛠 Stack</h2>
     <ul>
         <li>Java</li>
