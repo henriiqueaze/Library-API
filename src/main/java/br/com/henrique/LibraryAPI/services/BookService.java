@@ -1,5 +1,6 @@
 package br.com.henrique.LibraryAPI.services;
 
+import br.com.henrique.LibraryAPI.controllers.BookController;
 import br.com.henrique.LibraryAPI.data.DTOs.BookDTO;
 import br.com.henrique.LibraryAPI.exceptions.BookAlreadyExistsException;
 import br.com.henrique.LibraryAPI.exceptions.IdNotFoundException;
@@ -8,7 +9,11 @@ import br.com.henrique.LibraryAPI.mapping.Mapper;
 import br.com.henrique.LibraryAPI.model.entities.Book;
 import br.com.henrique.LibraryAPI.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -22,12 +27,16 @@ public class BookService {
 
     public BookDTO getById(Long id) {
         logger.info("Returning book with ID: " + id);
-        return Mapper.parseObjects(repository.findById(id).orElseThrow(() -> new IdNotFoundException("Id not found")), BookDTO.class);
+        var dto = Mapper.parseObjects(repository.findById(id).orElseThrow(() -> new IdNotFoundException("Id not found")), BookDTO.class);
+        addHateOASLinks(dto);
+        return dto;
     }
 
     public List<BookDTO> getAll() {
         logger.info("Returning all books!");
-        return Mapper.parseObjectsList(repository.findAll(), BookDTO.class);
+        var dto = Mapper.parseObjectsList(repository.findAll(), BookDTO.class);
+        dto.forEach(this::addHateOASLinks);
+        return dto;
     }
 
     public BookDTO post(BookDTO book) {
@@ -43,7 +52,9 @@ public class BookService {
 
         repository.save(entity);
         logger.info("Posting a new book");
-        return Mapper.parseObjects(entity, BookDTO.class);
+        var dto = Mapper.parseObjects(entity, BookDTO.class);
+        addHateOASLinks(dto);
+        return dto;
     }
 
     public BookDTO put(BookDTO book) {
@@ -73,12 +84,22 @@ public class BookService {
         repository.save(entity);
         logger.info("Updating book with ID: " + book.getId());
 
-        return Mapper.parseObjects(entity, BookDTO.class);
+        var dto = Mapper.parseObjects(entity, BookDTO.class);
+        addHateOASLinks(dto);
+        return dto;
     }
 
     public void delete(Long id) {
         var entity = repository.findById(id).orElseThrow(() -> new IdNotFoundException("Id not found"));
         repository.delete(entity);
         logger.info("Deleting book with ID: " + id);
+    }
+
+    private void addHateOASLinks(BookDTO dto) {
+        dto.add(linkTo(methodOn(BookController.class).getBookById(dto.getId())).withSelfRel().withType("GET"));
+        dto.add(linkTo(methodOn(BookController.class).getAllBooks()).withRel("getAll").withType("GET"));
+        dto.add(linkTo(methodOn(BookController.class).postBook(dto)).withRel("getAll").withType("POST"));
+        dto.add(linkTo(methodOn(BookController.class).putBook(dto)).withRel("getAll").withType("PUT"));
+        dto.add(linkTo(methodOn(BookController.class).deleteBook(dto.getId())).withRel("delete").withType("DELETE"));
     }
 }

@@ -1,8 +1,10 @@
 package br.com.henrique.LibraryAPI.data.DTOs;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import java.time.LocalDateTime;
 
-public class BookDTO {
+public class BookDTO extends RepresentationModel<BookDTO> {
 
     private Long id;
     private String title;
