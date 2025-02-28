@@ -98,8 +98,8 @@ public class BookService {
     private void addHateOASLinks(BookDTO dto) {
         dto.add(linkTo(methodOn(BookController.class).getBookById(dto.getId())).withSelfRel().withType("GET"));
         dto.add(linkTo(methodOn(BookController.class).getAllBooks()).withRel("getAll").withType("GET"));
-        dto.add(linkTo(methodOn(BookController.class).postBook(dto)).withRel("getAll").withType("POST"));
-        dto.add(linkTo(methodOn(BookController.class).putBook(dto)).withRel("getAll").withType("PUT"));
+        dto.add(linkTo(methodOn(BookController.class).postBook(dto)).withRel("post").withType("POST"));
+        dto.add(linkTo(methodOn(BookController.class).putBook(dto)).withRel("update").withType("PUT"));
         dto.add(linkTo(methodOn(BookController.class).deleteBook(dto.getId())).withRel("delete").withType("DELETE"));
     }
 }
