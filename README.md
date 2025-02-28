@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book API - Documentation</title>
-</head>
-<body>
-
-<div class="container">
-    <h1 style="text-align: center">📚 Book API</h1>
-    <div class="img-container">
-        <img src="assets/images/terminal.png" alt="API Livros">
+<div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h1>📚 Library API</h1>
+    <div class="img-container" style="display: flex; justify-content: center;">
+        <img src="assets/images/terminal.png" alt="API Livros" style="width: 30%;">
     </div>
     <h2>📖 Description</h2>
     <p>API to manage and organize book data, including adding, updating, retrieving, and deleting books.</p>
@@ -49,6 +40,8 @@ DB_PASSWORD=yourpassword</code></pre>
         <li><strong>PUT /book</strong> - Update a book by ID.</li>
         <li><strong>DELETE /book/{id}</strong> - Delete a book by ID.</li>
     </ul>
+    <h2>💡 HATEOAS</h2>
+    <p>This API implements HATEOAS (Hypermedia as the Engine of Application State) principles to enhance its RESTful design. Each response includes hypermedia links that help clients navigate available actions such as self, update, and delete operations. This makes the API more intuitive and self-descriptive, allowing clients to discover functionality dynamically without relying solely on external documentation.</p>
     <h2>🛠 Stack</h2>
     <ul>
         <li>Java</li>
@@ -58,6 +51,3 @@ DB_PASSWORD=yourpassword</code></pre>
         <li>MySQL</li>
     </ul>
 </div>
-
-</body>
-</html>
