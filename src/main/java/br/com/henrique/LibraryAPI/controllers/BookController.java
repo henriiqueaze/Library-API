@@ -4,6 +4,7 @@ import br.com.henrique.LibraryAPI.data.DTOs.BookDTO;
 import br.com.henrique.LibraryAPI.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,8 +37,9 @@ public class BookController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteBook(@PathVariable Long id) {
+    public ResponseEntity<?> deleteBook(@PathVariable Long id) {
         service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
