@@ -1,4 +1,4 @@
-package br.com.henrique.LibraryAPI.configs;
+package br.com.henrique.LibraryAPI.infra.configurations;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

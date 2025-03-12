@@ -1,13 +1,13 @@
 package br.com.henrique.LibraryAPI.services;
 
 import br.com.henrique.LibraryAPI.controllers.BookController;
-import br.com.henrique.LibraryAPI.data.DTOs.BookDTO;
+import br.com.henrique.LibraryAPI.transfer.DTOs.BookDTO;
 import br.com.henrique.LibraryAPI.exceptions.BookAlreadyExistsException;
 import br.com.henrique.LibraryAPI.exceptions.IdNotFoundException;
 import br.com.henrique.LibraryAPI.exceptions.InvalidBookDataException;
 import br.com.henrique.LibraryAPI.mapping.Mapper;
 import br.com.henrique.LibraryAPI.model.entities.Book;
-import br.com.henrique.LibraryAPI.repositories.BookRepository;
+import br.com.henrique.LibraryAPI.infra.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;

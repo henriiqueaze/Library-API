@@ -1,4 +1,4 @@
-package br.com.henrique.LibraryAPI.data.DTOs;
+package br.com.henrique.LibraryAPI.transfer.DTOs;
 
 import org.springframework.hateoas.RepresentationModel;
 
