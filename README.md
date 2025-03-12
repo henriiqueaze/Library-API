@@ -1,8 +1,8 @@
 # <p align="center"> 📚 Library API
 
-<div style="display: flex; justify-content: center;">
-    <img src="assets/images/Logo%20-%20Library-API.png" alt="API Livros">
-</div>
+<p align="center">
+  <img src="assets/images/Logo%20-%20Library-API.png" alt="StudentProgress Logo">
+</p>
 
 ## 📖 Description
 API to manage and organize book data, including adding, updating, retrieving, and deleting books.
