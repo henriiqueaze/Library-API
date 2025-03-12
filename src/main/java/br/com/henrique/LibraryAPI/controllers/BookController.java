@@ -1,6 +1,6 @@
 package br.com.henrique.LibraryAPI.controllers;
 
-import br.com.henrique.LibraryAPI.data.DTOs.BookDTO;
+import br.com.henrique.LibraryAPI.transfer.DTOs.BookDTO;
 import br.com.henrique.LibraryAPI.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

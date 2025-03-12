@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/first_steps_with_spring?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/libraryAPI?useTimezone=true&serverTimezone=UTC
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
   jpa:
