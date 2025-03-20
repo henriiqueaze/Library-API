@@ -37,6 +37,12 @@ API to manage and organize book data, including adding, updating, retrieving, an
     http://localhost:8080/book
     ```
 
+6. **Swagger Documentation:**
+   The API documentation is available via Swagger at:
+    ```bash
+    http://localhost:8080/swagger-ui.html
+    ```
+
 ## 📌 Endpoints
 - **GET /book/{id}** - Retrieve a book by ID.
 - **GET /book** - List all books.
@@ -51,3 +57,4 @@ API to manage and organize book data, including adding, updating, retrieving, an
 - Flyway
 - MySQL
 - HATEOAS
+- Swagger (for API documentation)
